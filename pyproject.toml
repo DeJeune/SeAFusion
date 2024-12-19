@@ -1,0 +1,25 @@
+[project]
+name = "SeAFusion"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "DeJeune", email = "sy20010504@gmail.com"},
+]
+dependencies = [
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "numpy>=1.20.1",
+    "pillow>=8.0.1",
+    "onnx>=1.17.0",
+    "onnxscript>=0.1.0.dev20241218",
+    "onnxruntime>=1.19.2",
+    "opencv-python>=4.10.0.84",
+    "tqdm>=4.67.1"
+]
+requires-python = "==3.9.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false

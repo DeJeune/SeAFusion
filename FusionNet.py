@@ -11,7 +11,6 @@ class ConvBnLeakyRelu2d(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, padding=1, stride=1, dilation=1, groups=1):
         super(ConvBnLeakyRelu2d, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size, padding=padding, stride=stride, dilation=dilation, groups=groups)
-        self.bn   = nn.BatchNorm2d(out_channels)
     def forward(self, x):
         return F.leaky_relu(self.conv(x), negative_slope=0.2)
 
@@ -19,7 +18,6 @@ class ConvBnTanh2d(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size=3, padding=1, stride=1, dilation=1, groups=1):
         super(ConvBnTanh2d, self).__init__()
         self.conv = nn.Conv2d(in_channels, out_channels, kernel_size=kernel_size, padding=padding, stride=stride, dilation=dilation, groups=groups)
-        self.bn   = nn.BatchNorm2d(out_channels)
     def forward(self,x):
         return torch.tanh(self.conv(x))/2+0.5
 
